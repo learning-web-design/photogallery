@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Forms</title>
+  <style type="text/css">
+    input{
+      border:1px solid black;
+    }
+    input:focus{
+      background-color: #E6E6E6;
+    }
+    #nick{
+      margin-left: 4%;
+      display:none;
+      width: 50%;
+    }
+  </style>
+  <script type="text/javascript">
+    function nicknameFunction(){
+      if (document.getElementById('yesNick').checked) {
+      document.getElementById('nick').style.display="block";
+
+        document.getElementById('nickname').setAttribute('required', true);
+      }
+      else{
+        document.getElementById('nickname').removeAttribute('required');
+        document.getElementById('nick').style.display="none";
+      }
+    }
+  </script>
+</head>
+<body>
+<form>
+  <fieldset>
+    <legend>Form Verification</legend>
+    <label for="fname">First Name:</label>
+    <input type="text" name="fname" id="fname" required><br>
+      <label for="lname">Last Name:</label>
+      <input type="text" name="lName" id="lName" required></label>
+      <label for="yesNick">Nickname?:</label>
+      <input type="checkbox" name="yesNick" id="yesNick" value="yes" onchange="nicknameFunction()"><br>
+
+<div id="nick">
+  <label for="nickname">Nickname:</label>
+   <input type="text" name="nickname" id="nickname"><br>
+ </div>
+  <input type="submit" value="Verify">
+  </fieldset>
+</form>
+</body>
+</html>
